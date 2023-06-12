@@ -4,6 +4,7 @@ import * as dotenv from "dotenv";
 import cors from "cors";
 
 import signUp from "./routes/signup.js";
+import logIn from "./routes/signin.js";
 
 //config
 const app = express();
@@ -20,6 +21,7 @@ db.once("open", () => console.log("connected successfully to the database"));
 
 //routes
 app.use("/api/v1/signup", signUp);
+app.use("/api/v1/login", logIn);
 
 app.listen(6969, () => {
   console.log(`server running in http://localhost:6969`);
